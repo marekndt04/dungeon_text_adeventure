@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "dungeon-text-adeventure"
+version = "0.1.0"
+description = ""
+authors = ["Marek <m.arendt04@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
