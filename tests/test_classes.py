@@ -1,6 +1,7 @@
 import unittest
 
-from dungeon_text_adeventure.classes import Warrior, Mage, Rogue
+from dungeon_text_adeventure.classes import Mage, Rogue, Warrior
+
 
 class TestWarriorClass(unittest.TestCase):
 
@@ -9,7 +10,7 @@ class TestWarriorClass(unittest.TestCase):
 
     def test_warrior_init(self):
         self.assertEqual(self.warrior.health, 100)
-    
+
     def test_warrior_string_representation(self):
         self.assertEqual(str(self.warrior), "John the Warrior")
 
@@ -36,7 +37,7 @@ class TestMageClass(unittest.TestCase):
 
     def test_mage_init(self):
         self.assertEqual(self.mage.health, 50)
-    
+
     def test_mage_string_representation(self):
         self.assertEqual(str(self.mage), "Jane the Mage")
 
@@ -63,7 +64,7 @@ class TestRogueClass(unittest.TestCase):
 
     def test_rogue_init(self):
         self.assertEqual(self.rogue.health, 75)
-    
+
     def test_rogue_string_representation(self):
         self.assertEqual(str(self.rogue), "Jim the Rogue")
 
