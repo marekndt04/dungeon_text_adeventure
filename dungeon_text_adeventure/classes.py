@@ -2,12 +2,11 @@ import abc
 
 
 class AbstractClass(abc.ABC):
-    def __init__(self, name: str, spec: str) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.spec = spec
 
     @abc.abstractmethod
-    def attack(self, target: str) -> int:
+    def attack(self) -> int:
         pass
 
     @abc.abstractmethod
@@ -24,11 +23,11 @@ class AbstractClass(abc.ABC):
 
 
 class Warrior(AbstractClass):
-    def __init__(self, name: str, spec: str) -> None:
-        super().__init__(name, spec)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
         self.health = 100
 
-    def attack(self, target: str) -> int:
+    def attack(self) -> int:
         return 10
 
     def take_damage(self, damage: int) -> None:
@@ -42,11 +41,11 @@ class Warrior(AbstractClass):
 
 
 class Mage(AbstractClass):
-    def __init__(self, name: str, spec: str) -> None:
-        super().__init__(name, spec)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
         self.health = 50
 
-    def attack(self, target: str) -> int:
+    def attack(self) -> int:
         return 20
 
     def take_damage(self, damage: int) -> None:
@@ -60,11 +59,11 @@ class Mage(AbstractClass):
 
 
 class Rogue(AbstractClass):
-    def __init__(self, name: str, spec: str) -> None:
-        super().__init__(name, spec)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
         self.health = 75
 
-    def attack(self, target: str) -> int:
+    def attack(self) -> int:
         return 15
 
     def take_damage(self, damage: int) -> None:
