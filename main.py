@@ -1,7 +1,9 @@
 # function def main that takes name input from user and prints it
 
+
 def print_skull_logo():
-    print("""
+    print(
+        """
                  ______
               .-"      "-.
              /            \\
@@ -14,8 +16,9 @@ def print_skull_logo():
 (_)@8@8{}<_____|-IIIIII-|__________________________>
        )_/    \\         /
       (@       `-------`
-""")
-    
+"""
+    )
+
 
 def main():
     print_skull_logo()

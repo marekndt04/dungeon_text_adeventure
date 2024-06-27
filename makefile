@@ -4,7 +4,17 @@ black:
 isort:
 	isort .
 
+mypy:
+	mypy .
+
 format: black isort
 
-test:
-	python -m unittest discover -s tests
+check:
+	black --check .
+	isort --check .
+	mypy .
+
+unittest:
+	python -m unittest discover -s tests -b
+
+test: unittest check
