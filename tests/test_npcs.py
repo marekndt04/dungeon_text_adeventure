@@ -2,7 +2,7 @@ import io
 import unittest
 from unittest.mock import patch
 
-from tests.npcs import HealerNPC, MysticMerchant
+from dungeon_text_adeventure.npcs import HealerNPC, MysticMerchant
 
 
 class TestHealerNPCClass(unittest.TestCase):
