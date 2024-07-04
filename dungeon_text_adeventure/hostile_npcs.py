@@ -3,23 +3,21 @@ import abc
 
 class AbstractHostileNPC(abc.ABC):
     def __init__(self) -> None:
-        pass
+        self.health = 0
 
     @abc.abstractmethod
     def attack(self) -> int:
         pass
 
     @abc.abstractmethod
-    def take_damage(self, damage: int) -> None:
-        pass
-
-    @abc.abstractmethod
-    def is_alive(self) -> bool:
-        pass
-
-    @abc.abstractmethod
     def __str__(self) -> str:
         pass
+
+    def take_damage(self, damage: int) -> None:
+        self.health -= damage
+
+    def is_alive(self) -> bool:
+        return self.health > 0
 
 
 class Dragon(AbstractHostileNPC):
@@ -28,12 +26,6 @@ class Dragon(AbstractHostileNPC):
 
     def attack(self) -> int:
         return 20
-
-    def take_damage(self, damage: int) -> None:
-        self.health -= damage
-
-    def is_alive(self) -> bool:
-        return self.health > 0
 
     def __str__(self) -> str:
         return "The Dragon, eater of worlds"
@@ -46,12 +38,6 @@ class Troll(AbstractHostileNPC):
     def attack(self) -> int:
         return 10
 
-    def take_damage(self, damage: int) -> None:
-        self.health -= damage
-
-    def is_alive(self) -> bool:
-        return self.health > 0
-
     def __str__(self) -> str:
         return "The Troll, destroyer of dreams"
 
@@ -62,12 +48,6 @@ class LesserDemon(AbstractHostileNPC):
 
     def attack(self) -> int:
         return 10
-
-    def take_damage(self, damage: int) -> None:
-        self.health -= damage
-
-    def is_alive(self) -> bool:
-        return self.health > 0
 
     def __str__(self) -> str:
         return "The Lesser Demon, a harbinger of chaos"
